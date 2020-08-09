@@ -1,5 +1,9 @@
 class TasksController < ApplicationController
   before_action :set_project
+  before_action :set_task, only: [:edit, :update, :destroy]
+
+  def edit
+  end
 
   def create
     @task = @project.tasks.build(task_params)
@@ -9,7 +13,19 @@ class TasksController < ApplicationController
         format.html { redirect_to @project, notice: 'Task was successfully created.' }
         format.json { render :show, status: :created, location: @project }
       else
-        format.html { render :new }
+        format.html { redirect_to @project, notice: 'Task creation failed.' }
+        format.json { render json: @project.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def update
+    respond_to do |format|
+      if @task.update(task_params)
+        format.html { redirect_to @project, notice: 'Task was successfully updated.' }
+        format.json { render :show, status: :ok, location: @project }
+      else
+        format.html { render :edit }
         format.json { render json: @project.errors, status: :unprocessable_entity }
       end
     end
@@ -28,6 +44,10 @@ class TasksController < ApplicationController
   private
     def set_project
       @project = Project.find(params[:project_id])
+    end
+
+    def set_task
+      @task = @project.tasks.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.

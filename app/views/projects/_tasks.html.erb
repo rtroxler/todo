@@ -3,6 +3,7 @@
     <li class="task">
       <%= link_to "[ ]" %>
       <%= task.description %>
+      <%= link_to 'Edit', edit_project_task_path(project_id: @project.id, id: task.id) %>
       <%= link_to "Remove", project_task_path(project_id: @project.id, id: task.id), method: :delete %>
     </li>
   <% end %>
