@@ -10,6 +10,27 @@
   </head>
 
   <body>
-    <%= yield %>
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <span class="navbar-brand mb-0 h1">TODO</span>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+          <% unless current_user %>
+            <li>
+              <%= link_to "Sign Up", signup_path %>
+            </li>
+            <li>
+              <%= link_to "Log In", login_path %>
+            </li>
+          <% else %>
+            <%= link_to "Log Out", logout_path %>
+          <% end %>
+        </ul>
+      </div>
+    </nav>
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>

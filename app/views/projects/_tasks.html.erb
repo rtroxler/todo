@@ -1,10 +1,12 @@
-<ul style="list-style-type:none;">
+<ul style="list-group list-group-flush">
   <% for task in @project.tasks  %>
-    <li class="task">
+    <li class="list-group-item">
       <%= link_to "[ ]" %>
       <%= task.description %>
-      <%= link_to 'Edit', edit_project_task_path(project_id: @project.id, id: task.id) %>
-      <%= link_to "Remove", project_task_path(project_id: @project.id, id: task.id), method: :delete %>
+      <div class="task-action">
+      <%= link_to '', edit_project_task_path(project_id: @project.id, id: task.id), class: ' fa fa-edit' %>
+      <%= link_to '', project_task_path(project_id: @project.id, id: task.id), method: :delete, class: ' fa fa-trash' %>
+      </div>
     </li>
   <% end %>
 </ul>

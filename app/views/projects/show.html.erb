@@ -1,14 +1,17 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-<strong>Title:</strong>
-<%= @project.title %>
-</p>
+<div class="form-inline">
+  <h3>
+    <%= @project.title %>
+  </h3>
+  <%= link_to '  ', edit_project_path(@project), class: 'project-edit fa fa-edit' %>
+</div>
 
-<p>
-<strong>Description:</strong>
-<%= @project.description %>
-</p>
+<div class="container">
+  <p>
+  <%= @project.description %>
+  </p>
+</div>
 
 
 <%= render 'projects/tasks' %>
@@ -16,5 +19,4 @@
   <%= render "projects/task_form" %>
 </div>
 
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
+<%= link_to '  Back', projects_path, class: 'fa fa-arrow-left' %>
