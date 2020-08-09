@@ -2,7 +2,7 @@ class TasksController < ApplicationController
   before_action :set_project
 
   def create
-    @task = @project.tasks.build(task_params.merge(user: current_user))
+    @task = @project.tasks.build(task_params)
 
     respond_to do |format|
       if @task.save
@@ -32,6 +32,6 @@ class TasksController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def task_params
-      params.require(:task).permit(:description, :project_id, :user_id)
+      params.require(:task).permit(:description, :project_id)
     end
 end
