@@ -11,10 +11,9 @@
 </p>
 
 
-<%= render @project.tasks %>
-
+<%= render 'projects/tasks' %>
 <div id="form">
-  <%= render "tasks/form" %>
+  <%= render "projects/task_form" %>
 </div>
 
 <%= link_to 'Edit', edit_project_path(@project) %> |

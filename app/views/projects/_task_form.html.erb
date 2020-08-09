@@ -1,0 +1,5 @@
+<%= form_with model: [@project, @project.tasks.build] do |form| %>
+  <%= form.text_area :description, placeholder: "New task" %>
+  <br>
+  <%= form.submit %>
+<% end %>

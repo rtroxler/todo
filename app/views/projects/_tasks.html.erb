@@ -1,0 +1,9 @@
+<ul>
+  <% for task in @project.tasks  %>
+    <li class="task">
+      <%= task.description %>
+      <%= button_tag "Complete" %>
+      <%= button_to "Remove", project_task_path(project_id: @project.id, id: task.id), method: :delete %>
+    </li>
+  <% end %>
+</ul>
