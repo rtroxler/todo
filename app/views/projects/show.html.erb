@@ -1,19 +1,21 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Title:</strong>
-  <%= @project.title %>
+<strong>Title:</strong>
+<%= @project.title %>
 </p>
 
 <p>
-  <strong>Description:</strong>
-  <%= @project.description %>
+<strong>Description:</strong>
+<%= @project.description %>
 </p>
 
-<p>
-  <strong>User:</strong>
-  <%= @project.user_id %>
-</p>
+
+<%= render @project.tasks %>
+
+<div id="form">
+  <%= render "tasks/form" %>
+</div>
 
 <%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %>
