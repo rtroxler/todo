@@ -1,5 +1,14 @@
-<%= form_with model: [@project, @project.tasks.build] do |form| %>
-  <%= form.text_area :description, placeholder: "New task" %>
-  <br>
-  <%= form.submit %>
+<%= form_with model: [@project, @project.tasks.build], class: "new-task-form" do |form| %>
+  <div class="row ml-0 task">
+    <div class="task-row-input">
+      <div class="input-group input-group-lg">
+        <%= form.text_field :description, placeholder: "New task", id: "new-task-input", class: "form-control input-lg mb-2"  %>
+      </div>
+    </div>
+    <div id="task-row-submit" class="col-lg-1">
+      <div class="input-group-btn">
+        <%= form.submit "Submit", class: "btn btn-default" %>
+      </div>
+    </div>
+  </div>
 <% end %>

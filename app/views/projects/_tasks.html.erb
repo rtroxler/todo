@@ -1,7 +1,7 @@
 <ul style="list-group list-group-flush">
   <% for task in @project.tasks  %>
     <li class="list-group-item">
-      <%= link_to "[ ]" %>
+      <%= check_box_tag("completed", "value", false, class: "checkbox mr-2") %>
       <%= task.description %>
       <div class="task-action">
       <%= link_to '', edit_project_task_path(project_id: @project.id, id: task.id), class: ' fa fa-edit' %>

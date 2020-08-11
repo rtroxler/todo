@@ -14,9 +14,11 @@
 </div>
 
 
+<div class="task-list">
+<ul style="list-group list-group-flush">
 <%= render 'projects/tasks' %>
-<div id="form">
-  <%= render "projects/task_form" %>
+<%= render "projects/task_form" %>
+</ul>
 </div>
 
 <%= link_to '  Back', projects_path, class: 'fa fa-arrow-left' %>

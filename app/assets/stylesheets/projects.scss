@@ -9,3 +9,33 @@
 .task-action {
   float: right;
 }
+
+.task {
+  flex-wrap: nowrap;
+  margin-right: 0px;
+}
+
+.new-task-form {
+  padding-left: 39px;
+  margin-left: 0px;
+}
+
+.task-row-input {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+#new-task-input {
+  padding-left: 43px;
+  height: 49px;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+#task-row-submit {
+  padding-left: 0px;
+  margin-left: -80px;
+  margin-top: 7px;
+  z-index: 99;
+}
