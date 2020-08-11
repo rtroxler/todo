@@ -1,9 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <% unless current_user %>
-  <%# -- Make this more of a landing page for someone not signed in %>
-  <%= link_to "Sign Up", signup_path %> or
-  <%= link_to "Log In", login_path %>
+  <div class="hero-unit">
+    <h1>Welcome</h1>
+    <p>This is a simple todo application built with Rails 6.</p>
+    <p>Please <%= link_to "Sign Up", signup_path %> or <%= link_to "Log In", login_path %> to continue.</p>
+  </div>
 <% else %>
 
 <h1>My Projects</h1>
