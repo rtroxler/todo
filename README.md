@@ -6,7 +6,7 @@
 ## Set up subtasks under each project to be completed
 ![todo_task_list2](https://user-images.githubusercontent.com/2049459/89943886-91997080-dbe4-11ea-98c1-ea672ac3048c.png)
 
-## Requirements
+## Dev Requirements
 
 * [Ruby 2.5.5](https://www.ruby-lang.org/en/documentation/installation/): Really anything 2.5+ works, since we need that for Rails 6.
 * [SQLite3](https://www.sqlite.org/index.html): Your computer probably already has it. Verify that it's installed with:
@@ -23,7 +23,7 @@ gem install rails
 sudo apt install git curl libssl-dev libreadline-dev zlib1g-dev autoconf bison build-essential libyaml-dev libncurses5-dev libffi-dev libgdbm-dev libsqlite3-dev
 ```
 
-## Set up
+## Dev Set up
 
 Clone the repo and cd into the new directory:
 ```
@@ -47,7 +47,7 @@ Fire up your rails server:
 rails s
 ```
 
-Now you if you visit `localhost:3000` you should be greeted with a welcome screen asking you to log in.
+Now you if you visit `localhost:3000` you should be greeted with a welcome screen asking you to log in!
 
 ## Tests
 

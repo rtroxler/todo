@@ -2,9 +2,9 @@
   <% for task in @sorted_tasks  %>
     <li class="list-group-item task-list-item <%= task.completed ? 'completed-task' : '' %>">
       <% if !task.completed %>
-        <%= link_to '', project_task_complete_path(project_id: @project.id, task_id: task.id), class: 'fa fa-square pr-2' %>
+        <%= link_to '', project_task_complete_path(project_id: @project.id, task_id: task.id), class: 'fa fa-square-o pr-2' %>
       <% else %>
-        <%= link_to '', project_task_uncomplete_path(project_id: @project.id, task_id: task.id), class: 'fa fa-check-square pr-2' %>
+        <%= link_to '', project_task_uncomplete_path(project_id: @project.id, task_id: task.id), class: 'fa fa-check-square-o pr-2' %>
       <% end %>
 
       <%= task.description %>
