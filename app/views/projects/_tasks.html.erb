@@ -1,11 +1,17 @@
 <ul style="list-group list-group-flush">
-  <% for task in @project.tasks  %>
-    <li class="list-group-item">
-      <%= check_box_tag("completed", "value", false, class: "checkbox mr-2") %>
+  <% for task in @sorted_tasks  %>
+    <li class="list-group-item <%= task.completed ? 'completed-task' : '' %>">
+      <% if !task.completed %>
+        <%= link_to '', project_task_complete_path(project_id: @project.id, task_id: task.id), class: 'fa fa-square pr-2' %>
+      <% else %>
+        <%= link_to '', project_task_uncomplete_path(project_id: @project.id, task_id: task.id), class: 'fa fa-check-square pr-2' %>
+      <% end %>
+
       <%= task.description %>
+
       <div class="task-action">
-      <%= link_to '', edit_project_task_path(project_id: @project.id, id: task.id), class: ' fa fa-edit' %>
-      <%= link_to '', project_task_path(project_id: @project.id, id: task.id), method: :delete, class: ' fa fa-trash' %>
+        <%= link_to '', edit_project_task_path(project_id: @project.id, id: task.id), class: 'fa fa-edit' %>
+        <%= link_to '', project_task_path(project_id: @project.id, id: task.id), method: :delete, class: 'fa fa-trash' %>
       </div>
     </li>
   <% end %>

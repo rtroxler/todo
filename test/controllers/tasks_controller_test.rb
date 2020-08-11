@@ -32,4 +32,15 @@ class TasksControllerTest < ActionDispatch::IntegrationTest
 
     assert_redirected_to project_url(@project)
   end
+
+  test "should complete a task" do
+    get project_task_complete_path(project_id: @task.project.id, task_id: @task.id)
+    assert @task.reload.completed
+  end
+
+  test "should uncomplete a task" do
+    @task.update completed: true
+    get project_task_uncomplete_path(project_id: @task.project.id, task_id: @task.id)
+    refute @task.reload.completed
+  end
 end
