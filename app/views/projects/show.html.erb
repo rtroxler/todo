@@ -5,6 +5,7 @@
     <%= @project.title %>
   </h3>
   <%= link_to '  ', edit_project_path(@project), class: 'project-edit fa fa-edit' %>
+  <%= link_to ' ', @project, class: 'project-edit fa fa-trash', method: :delete, data: { confirm: 'Are you sure?' } %>
 </div>
 
 <div class="container">
@@ -13,6 +14,7 @@
   </p>
 </div>
 
+<h6 class="task-header">Tasks</h6>
 
 <div class="task-list">
   <ul style="list-group list-group-flush">
@@ -21,4 +23,4 @@
   </ul>
 </div>
 
-<%= link_to '  Back', projects_path, class: 'fa fa-arrow-left' %>
+<%= link_to '  Back', projects_path, class: 'fa fa-arrow-left btn btn-default' %>

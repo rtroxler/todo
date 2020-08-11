@@ -1,6 +1,6 @@
 <ul style="list-group list-group-flush">
   <% for task in @sorted_tasks  %>
-    <li class="list-group-item <%= task.completed ? 'completed-task' : '' %>">
+    <li class="list-group-item task-list-item <%= task.completed ? 'completed-task' : '' %>">
       <% if !task.completed %>
         <%= link_to '', project_task_complete_path(project_id: @project.id, task_id: task.id), class: 'fa fa-square pr-2' %>
       <% else %>

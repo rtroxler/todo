@@ -31,6 +31,10 @@
   padding-left: 10px;
 }
 
+.task-header {
+  padding-left: 80px;
+}
+
 .task-action {
   float: right;
 }
@@ -39,6 +43,10 @@
   flex-wrap: nowrap;
   margin-right: 0px;
   padding-left: 1px;
+}
+
+.task-list-item {
+  border-bottom-style: hidden;
 }
 
 .completed-task {
@@ -65,7 +73,6 @@
   -moz-border-radius: 0px;
   -webkit-border-radius: 0px;
   border-radius: 0px;
-  border-top-style: hidden;
 }
 
 #task-row-submit {
