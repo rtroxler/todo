@@ -7,7 +7,9 @@
     </div>
     <div id="task-row-submit" class="col-lg-1">
       <div class="input-group-btn">
-        <%= form.submit "Submit", class: "btn btn-default" %>
+        <%= button_tag class: 'task-submit-button' do %>
+          <i class="fa fa-arrow-right"></i>
+        <% end %>
       </div>
     </div>
   </div>

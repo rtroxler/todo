@@ -35,7 +35,13 @@
 
 #task-row-submit {
   padding-left: 0px;
-  margin-left: -80px;
-  margin-top: 7px;
+  margin-left: -40px;
+  margin-top: 10px;
   z-index: 99;
+}
+
+.task-submit-button {
+  border: none;
+  color: #007bff;
+  background-color: white;
 }
