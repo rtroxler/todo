@@ -13,6 +13,7 @@
 .task {
   flex-wrap: nowrap;
   margin-right: 0px;
+  padding-left: 1px;
 }
 
 .new-task-form {
@@ -26,11 +27,15 @@
 }
 
 #new-task-input {
-  padding-left: 43px;
+  padding-left: 45px;
   height: 49px;
   font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
+  font-size: 1rem;
   line-height: 18px;
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 0px;
+  border-radius: 0px;
+  border-top-style: hidden;
 }
 
 #task-row-submit {
@@ -43,5 +48,5 @@
 .task-submit-button {
   border: none;
   color: #007bff;
-  background-color: white;
+  background-color: inherit;
 }
